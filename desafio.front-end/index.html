@@ -13,6 +13,7 @@
         <h2>Cadastro de Fornecedor e Produtos</h2>
         <form id="cadastro-form">
             <!-- Dados do Fornecedor -->
+            <h3>Dados do Fornecedor</h3>
             <div class="form-group">
                 <label for="razaoSocial">Razão Social*</label>
                 <input type="text" class="form-control" id="razaoSocial" required>
@@ -38,6 +39,23 @@
                 <label for="cep">CEP*</label>
                 <input type="text" class="form-control" id="cep" required>
             </div>
+            <button type="button" id="buscar">Buscar</button>
+            <div class="form-group">
+                <label for="logradouro">Logradouro*</label>
+                <input type="text" class="form-control" id="logradouro" name="logradouro">
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" class="form-control" id="bairro" name="bairro">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" class="form-control" id="cidade" name="cidade">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" class="form-control" id="estado" name="estado">
+            </div>
             <div class="form-group">
                 <label for="nomeContato">Nome da Pessoa de Contato*</label>
                 <input type="text" class="form-control" id="nomeContado" required>
@@ -51,6 +69,7 @@
                 <input type="text" class="form-control" id="email" required>
             </div>
 
+
             <!-- Tabela de Produtos -->
             <h4>Produtos</h4>
             <table class="table" id="produtos-table">
@@ -59,19 +78,33 @@
                         <th>Descrição</th>
                         <th>Unidade de Medida</th>
                         <th>Quantidade em Estoque</th>
-                        <th>Valor Unitário</th>
+                        <th>Valor Unitário (R$)</th>
                         <th>Valor Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Linhas de produtos aqui -->
                     <tr>
                         <td>Liquidificador</td>
-                        <td>15</td>
+                        <td class="qtdItem">15</td>
                         <td>50</td>
-                        <td>R$ 120,00</td>
-                        <td></td>
+                        <td class="valorItem">120,00</td>
+                        <td ></td>
                     </tr>
+                    <tr>
+                        <td>Cafeteria</td>
+                        <td class="qtdItem">23</td>
+                        <td>50</td>
+                        <td class="valorItem">120,00</td>
+                        <td ></td>
+                    </tr>
+                    <tr>
+                        <td>Torradeira</td>
+                        <td class="qtdItem">8</td>
+                        <td>50</td>
+                        <td class="valorItem">120,00</td>
+                        <td id="totalCell"></td>
+                    </tr>
+                    
 
                 </tbody>
             </table>
@@ -89,15 +122,22 @@
                     <!-- Linhas de anexos aqui -->
                 </tbody>
             </table>
-            <button class="btn btn-primary" id="add-anexo">Adicionar Anexo</button>
+            <tr>
+                <td>
+                    <input type="file" class="form-control-file" name="anexo" id="anexo">
+                </td>
+                <td>
+                    <button class="btn btn-primary" id="adicionar-anexo">Adicionar Anexo</button>
+                </td>
+            </tr>
 
             <button class="btn btn-success" id="salvar-fornecedor">Salvar Fornecedor</button>
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="seu-script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
